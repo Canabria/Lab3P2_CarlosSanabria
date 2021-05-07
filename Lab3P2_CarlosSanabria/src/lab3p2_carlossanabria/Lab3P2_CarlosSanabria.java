@@ -24,6 +24,7 @@ public static Scanner leer=new Scanner(System.in);
         ArrayList<String> pas = new ArrayList<String>();
         ArrayList<Tienda> t = new ArrayList();
         ArrayList<Articulos> a;
+        ArrayList<Clientes> c;
         String resp = "";
         while (!resp.equalsIgnoreCase("f")) {
             System.out.println("Bienvenidos usted es un? (admin/supervisor/asessor/cliente)\n si quiere salir ingrese f");
@@ -53,9 +54,35 @@ public static Scanner leer=new Scanner(System.in);
                                     op1 = leer.nextInt();
                                     switch(op1){
                                         case 1:
-                                            
+                                            String ubicacion, producto_ven;
+                                        int ID_unico, max_empleado, cant_cajas, max_art;
+                                        System.out.println("Ingrese la Ubicacion de la Tienda");
+                                        ubicacion = leer.next();
+                                        System.out.println("Ingrese el producto Mas Vendido: ");
+                                        producto_ven = leer.next();
+                                        System.out.println("Ingrese el Identificador: ");
+                                        ID_unico = leer.nextInt();
+                                        System.out.println("Ingrese Cantidad Maxima de Empleados: ");
+                                        max_empleado = leer.nextInt();
+                                        System.out.println("Ingrese Cantidad Maxima de Cajas: ");
+                                        cant_cajas = leer.nextInt();
+                                        System.out.println("Ingrese Cantidad Maxima de Articulos: ");
+                                        max_art = leer.nextInt();
+                                                                               
+                                        t.add(new Tienda(ubicacion,producto_ven,ID_unico,max_empleado,cant_cajas,max_art));
                                         break;
                                         case 2:
+                                            if (t.isEmpty()) {
+                                                System.out.println("Error Debe crear una Tienda antes de crear un Cliente");
+                                            } else {
+                                                System.out.println("Corporaciones actualmente en el sistema: ");
+                                                for (int i = 0; i < t.size(); i++) {
+                                                    System.out.println(i + ")" + t.get(i));
+                                                    System.out.println("");
+                                                }//fin del for que recorre la lista de tiendas
+                                                System.out.println("ingrese el indice de la Tienda cual usted desea agregar una Articulo: ");
+                                                int opc1 = leer.nextInt();
+                                                c=t.get(opc1).getClientes();
                                             System.out.println("ingrese su nombre: ");
                                             String nom=leer.next();
                                             System.out.println("ingrese apellido: ");
@@ -89,16 +116,19 @@ public static Scanner leer=new Scanner(System.in);
                                                 System.out.println("Por favor ingrese su contraseña: ");
                                                 contra=leer.next();
                                                 }
+                                                usa.add(user);
+                                                pas.add(contra);
                                                 System.out.println("que cuenta tien useted (supervisador/ assesor_finaciero/cliente)");
                                                 String clases=leer.next();
                                                 while (!clases.equalsIgnoreCase("supervisador") && !clases.equalsIgnoreCase("assesor_finaciero")&&!clases.equalsIgnoreCase("Cliente")) {
                                                 System.out.println("Por favor ingrese: (supervisador/ assesor_finaciero/cliente)");
                                                 clases=leer.next();
+                                                c.add(new Clientes(nom,ape,naci,dom,sal,cred,comp,compp,clases));
                                                 }
                                             }else if(resp1.equalsIgnoreCase("no")){
-                                                System.out.println("okay regres");
+                                                System.out.println("okay regrese al menu principal");
+                                                c.add(new Clientes(nom,ape,naci,dom,sal,cred,comp,compp));
                                             }
-                                            (String nom, String ape, String nacio, String direcion, double sal, double cant_cred, int cant_comp, String lista_comp,String clase)
                                         break;
                                         case 3:
                                             if (t.isEmpty()) {
@@ -111,8 +141,7 @@ public static Scanner leer=new Scanner(System.in);
                                     }//fin del for que recorre la lista de tiendas
                                     System.out.println("ingrese el indice de la Tienda cual usted desea agregar una Articulo: ");
                                     int opc1 =leer.nextInt();
-                                    a=t.get(opc1).getArt();
-                                    t.add()
+                                    a=t.get(opc1).getArticulos();
                                     int num_serie, precio;
                                     String color, info_garan;
                                     System.out.println("Ingrese el Numero de Serie del Articulo: ");
@@ -123,9 +152,12 @@ public static Scanner leer=new Scanner(System.in);
                                     color = sc.next();
                                     System.out.println("Ingrese la Informacion de Garantia: ");
                                     info_garan = sc.next();
+                                            }
                                         break;
                                         case 4:
+                                        
                                         break;
+                                    }
                                     }
                                 }
                                 break;
@@ -142,5 +174,6 @@ public static Scanner leer=new Scanner(System.in);
                 
             }
         }
+    }
     }
 }

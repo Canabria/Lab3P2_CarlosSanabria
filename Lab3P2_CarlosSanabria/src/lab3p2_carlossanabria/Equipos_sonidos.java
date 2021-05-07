@@ -71,7 +71,7 @@ public class Equipos_sonidos extends Articulos{
 
     @Override
     public String toString() {
-        return "Equipos_sonidos{" + "cant_a=" + cant_a + ", pot_m=" + pot_m + ", cant_p=" + cant_p + ", cant_dsic=" + cant_dsic + ", cant_pU=" + cant_pU + '}';
+        return super.toString()+"Equipos_sonidos{" + "cant_a=" + cant_a + ", pot_m=" + pot_m + ", cant_p=" + cant_p + ", cant_dsic=" + cant_dsic + ", cant_pU=" + cant_pU + '}';
     }
     
     

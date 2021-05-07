@@ -76,7 +76,7 @@ public class Consol extends Articulos{
 
     @Override
     public String toString() {
-        return "Consol{" + "cant_almace=" + cant_almace + ", cant_contr=" + cant_contr + ", num_acc=" + num_acc + ", marca=" + marca + ", info_VC=" + info_VC + '}';
+        return super.toString()+"Consol{" + "cant_almace=" + cant_almace + ", cant_contr=" + cant_contr + ", num_acc=" + num_acc + ", marca=" + marca + ", info_VC=" + info_VC + '}';
     }
     
     

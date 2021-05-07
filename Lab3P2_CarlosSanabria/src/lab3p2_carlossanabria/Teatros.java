@@ -52,7 +52,7 @@ public class Teatros extends Articulos {
 
     @Override
     public String toString() {
-        return "Teatro\n" 
+        return super.toString()+"Teatro\n" 
                 + "\nCantidad de altavoces: " + cant_alt 
                 + "\nCantidad discos Blue Ray: " + cant_discBR 
                 + "\nInfo de Limpieza de Lector de Discos: " + info_limp;

@@ -72,7 +72,7 @@ public class Tele extends Articulos{
 
     @Override
     public String toString() {
-        return "Tele{" + "smart=" + smart + ", marca=" + marca + ", tam_pan=" + tam_pan + ", cant_conex=" + cant_conex + ", grosor=" + grosor + '}';
+        return super.toString()+"Tele{" + "smart=" + smart + ", marca=" + marca + ", tam_pan=" + tam_pan + ", cant_conex=" + cant_conex + ", grosor=" + grosor + '}';
     }
     
     

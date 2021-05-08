@@ -11,9 +11,18 @@ import java.util.ArrayList;
  *
  * @author Carlos Sanabria
  */
-public class E_cajero {
+public class E_cajero extends Empleados{
     private String horario, meta;
     private int cant_a, hora_alm, cant_emplea;
+
+    public E_cajero(String horario, String meta, int cant_a, int hora_alm, int cant_emplea, String nombre, String apellido, double salario, String nacionalidad) {
+        super(nombre, apellido, salario, nacionalidad);
+        this.horario = horario;
+        this.meta = meta;
+        this.cant_a = cant_a;
+        this.hora_alm = hora_alm;
+        this.cant_emplea = cant_emplea;
+    }
 
     public E_cajero(String horario, String meta, int cant_a, int hora_alm, int cant_emplea) {
         this.horario = horario;
@@ -23,6 +32,7 @@ public class E_cajero {
         this.cant_emplea = cant_emplea;
     }
 
+    
     public String getHorario() {
         return horario;
     }
@@ -65,7 +75,7 @@ public class E_cajero {
 
     @Override
     public String toString() {
-        return "E_cajero{" + "horario=" + horario + ", meta=" + meta + ", cant_a=" + cant_a + ", hora_alm=" + hora_alm + ", cant_emplea=" + cant_emplea + '}';
+        return super.toString()+"E_cajero{" + "horario=" + horario + ", meta=" + meta + ", cant_a=" + cant_a + ", hora_alm=" + hora_alm + ", cant_emplea=" + cant_emplea + '}';
     }
     
     

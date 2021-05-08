@@ -10,9 +10,10 @@ package lab3p2_carlossanabria;
  * @author Carlos Sanabria
  */
 public class Empleados {
- private String nombre, apellido, salario, nacionalidad;
+ private String nombre, apellido,nacionalidad;
+ private double salario;
 
-    public Empleados(String nombre, String apellido, String salario, String nacionalidad) {
+    public Empleados(String nombre, String apellido, double salario, String nacionalidad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.salario = salario;
@@ -38,11 +39,11 @@ public class Empleados {
         this.apellido = apellido;
     }
 
-    public String getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
@@ -56,7 +57,7 @@ public class Empleados {
 
     @Override
     public String toString() {
-        return "Empleados{" + "nombre=" + nombre + ", apellido=" + apellido + ", salario=" + salario + ", nacionalidad=" + nacionalidad + '}';
+        return "Empleados{" + "nombre=" + nombre + ", apellido=" + apellido + ", salario=" + salario + ", nacionalidad=" + nacionalidad + "\n";
     }
     
     

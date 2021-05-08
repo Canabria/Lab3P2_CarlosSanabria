@@ -14,9 +14,8 @@ import java.util.ArrayList;
 public class E_Assesor_F extends Empleados{
     private int cant_productos,tot_cred;
     private String lista_comp;
-    ArrayList<String> c=new ArrayList<String>();
 
-    public E_Assesor_F(int cant_productos, int tot_cred, String lista_comp, String nombre, String apellido, String salario, String nacionalidad) {
+    public E_Assesor_F(int cant_productos, int tot_cred, String lista_comp, String nombre, String apellido, double salario, String nacionalidad) {
         super(nombre, apellido, salario, nacionalidad);
         this.cant_productos = cant_productos;
         this.tot_cred = tot_cred;
@@ -29,9 +28,7 @@ public class E_Assesor_F extends Empleados{
         this.lista_comp = lista_comp;
     }
 
-    
-
-    
+  
 
 
     public int getCant_productos() {
@@ -58,17 +55,11 @@ public class E_Assesor_F extends Empleados{
         this.lista_comp = lista_comp;
     }
 
-    public ArrayList<String> getC() {
-        return c;
-    }
-
-    public void setC(ArrayList<String> c) {
-        this.c = c;
-    }
+    
 
     @Override
     public String toString() {
-        return super.toString()+"E_Assesor_F{" + "cant_productos=" + cant_productos + ", tot_cred=" + tot_cred + ", lista_comp=" + lista_comp + ", c=" + c + '}';
+        return super.toString()+"E_Assesor_F{" + "cant_productos=" + cant_productos + ", tot_cred=" + tot_cred + ", lista_comp=" + lista_comp +'}';
     }
     
     
